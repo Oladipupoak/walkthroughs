@@ -11,15 +11,15 @@ def show_weather_to_user(weather_data_list):
     for weather_data in weather_data_list:
         hour_number = weather_data['timepoint']
         temperature = weather_data['temp2m']
-        print(f'On hour {hour_number},')
+        return f'On hour {hour_number},'
         if hour_number == 24:
-            print('(in one day)')
+            return '(in one day)'
         elif hour_number == 48:
-            print('(in two days)')
+            return '(in two days)'
         elif hour_number == 72:
-            print('(in three days)')
+            return '(in three days)'
 
-        print(f'The temperature is {temperature}')
+        return f'The temperature is {temperature}'
 
 def show_weather():
     city_name = input('Please type a city')
@@ -32,7 +32,7 @@ def show_weather():
             weather_data_list = all_data['dataseries']
         
         
-        show_weather_to_user(weather_data_list)
+        print(show_weather_to_user(weather_data_list))
 
 
 

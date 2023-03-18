@@ -11,9 +11,9 @@ def show_weather_to_user(weather_data_list):
         day_number = weather_data['day']
         temperature = weather_data['temperature']
         wind_speed = weather_data['wind_speed']
-        print(f'On day {day_number},')
-        print(f'The temperature is {temperature}')
-        print(f'The wind speed is {wind_speed}')
+        return f'On day {day_number},'
+        return f'The temperature is {temperature}'
+        return f'The wind speed is {wind_speed}'
 
 def show_weather():
     with open('all_data.json', 'r') as f:
@@ -34,7 +34,7 @@ def show_weather():
     else:
         coords = map_city_to_coords[city_name]
         weather_data_list = all_forecasts[coords]
-        show_weather_to_user(weather_data_list)
+        print(show_weather_to_user(weather_data_list))
 
 show_weather()
 
